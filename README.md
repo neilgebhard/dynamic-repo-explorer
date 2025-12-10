@@ -62,3 +62,9 @@ The client will run on `http://localhost:3000`.
 ### Run Tests for Client
 
 - `npm run test` - Run tests
+
+## Development Notes
+
+**AI Usage**:
+
+I built this project using Claude AI as a development tool. I used AI to help plan out tasks, implement features when I hit roadblocks, debug errors, and handle styling. I stayed hands-on the whole time—writing code myself, tweaking and modifying AI-generated code to fit what I needed, making architectural decisions, and making sure everything met my standards and followed the project requirements. Most importantly, I reviewed and understood all the AI-generated code before adding it to the project. This is actually how I work. AI is a solid tool for moving faster, but I make sure I fully own and understand what goes into my code.
