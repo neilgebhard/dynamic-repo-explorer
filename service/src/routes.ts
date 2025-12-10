@@ -12,7 +12,7 @@ const GITHUB_HEADERS = {
 router.get('/initial', async (req: Request, res: Response) => {
   try {
     const response = await fetch(
-      'https://api.github.com/repositories?per_page=20',
+      'https://api.github.com/search/repositories?q=is:public+archived:false&sort=updated&order=desc&per_page=20',
       {
         headers: GITHUB_HEADERS,
       }
@@ -24,7 +24,7 @@ router.get('/initial', async (req: Request, res: Response) => {
 
     const data = await response.json()
 
-    const json = data.map((repo: Repo) => ({
+    const json = data.items.map((repo: Repo) => ({
       id: repo.id,
       name: repo.name,
       owner: repo.owner.login,
@@ -47,7 +47,7 @@ router.get('/:owner', async (req: Request, res: Response) => {
 
   try {
     const response = await fetch(
-      `https://api.github.com/users/${owner}/repos?per_page=100&sort=updated`,
+      `https://api.github.com/users/${owner}/repos`,
       {
         headers: GITHUB_HEADERS,
       }
