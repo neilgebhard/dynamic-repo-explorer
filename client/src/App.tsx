@@ -7,8 +7,9 @@ function App() {
   const [repos, setRepos] = useState<Repo[]>([])
   const [ownerRepos, setOwnerRepos] = useState<Repo[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
   const [filter, setFilter] = useState('')
+  const [error, setError] = useState<string | null>(null)
+  const [ownerError, setOwnerError] = useState('')
 
   useEffect(() => {
     fetch('/api/repos/initial')
@@ -24,7 +25,7 @@ function App() {
     fetch(`/api/repos/${owner}`)
       .then((res) => res.json())
       .then(setOwnerRepos)
-      .catch(() => alert('Failed to load owner repos'))
+      .catch(() => setOwnerError('Failed to load owner repos'))
   }
 
   if (loading) return <h2>Loading...</h2>
@@ -42,12 +43,14 @@ function App() {
         id='filter'
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
+        type='text'
       />
       <InitialRepos
         repos={filteredRepos}
         onShowOwnerRepos={handleShowOwnerRepos}
       />
       {ownerRepos.length > 0 && <OwnerRepos repos={ownerRepos} />}
+      {ownerError && <h2>{ownerError}</h2>}
     </>
   )
 }

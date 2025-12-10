@@ -7,7 +7,7 @@ interface Props {
 export default function OwnerRepos({ repos }: Props) {
   return (
     <>
-      <h2>Repos for {repos[0].owner}</h2>
+      <h2>{repos.length > 0 && `Repos for ${repos[0].owner}`}</h2>
       <table border={1}>
         <thead>
           <tr>
