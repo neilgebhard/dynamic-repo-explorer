@@ -13,7 +13,10 @@ function App() {
 
   useEffect(() => {
     fetch('/api/repos/initial')
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
+      })
       .then(setRepos)
       .catch(() => setError('Failed to load repos'))
       .finally(() => {
@@ -23,7 +26,10 @@ function App() {
 
   const handleShowOwnerRepos = (owner: string) => {
     fetch(`/api/repos/${owner}`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
+      })
       .then(setOwnerRepos)
       .catch(() => setOwnerError('Failed to load owner repos'))
   }

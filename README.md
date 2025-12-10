@@ -59,8 +59,6 @@ npm run dev
 
 The client will run on `http://localhost:3000`.
 
-## Available Scripts
-
 ### Run Tests for Client
 
 - `npm run test` - Run tests

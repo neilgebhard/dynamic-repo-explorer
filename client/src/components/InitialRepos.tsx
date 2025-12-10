@@ -7,7 +7,7 @@ interface Props {
 
 export default function InitialRepos({ repos, onShowOwnerRepos }: Props) {
   return (
-    <table border={1}>
+    <table>
       <thead>
         <tr>
           <th>Owner</th>
