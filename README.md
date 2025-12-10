@@ -2,66 +2,47 @@
 
 A full-stack application for exploring GitHub repositories dynamically.
 
-## Installation
+## Getting Started
 
-### Client
+1. Install client dependencies:
 
-Navigate to the client directory and install dependencies:
+   ```bash
+   cd client && npm install
+   ```
 
-```bash
-cd client
-npm install
-```
+2. Install service dependencies:
 
-### Service
+   ```bash
+   cd ../service && npm install
+   ```
 
-Navigate to the service directory and install dependencies:
+3. Set up environment variables in `/service` by copying `.env.example`:
 
-```bash
-cd service
-npm install
-```
+   ```bash
+   cp .env.example .env
+   ```
 
-Set up environment variables by copying the example file:
+4. Edit `/service/.env` and add your GitHub token (or add mine):
 
-```bash
-cp .env.example .env
-```
+   ```
+   PORT=3001
+   GITHUB_TOKEN=
+   ```
 
-Edit the `.env` file and add your GitHub token:
+5. Start the service:
 
-```
-PORT=3001
-GITHUB_TOKEN=
-```
+   ```bash
+   npm run dev
+   ```
 
-## Running Locally
+6. In a new terminal, start the client in `/client`:
+   ```bash
+   npm run dev
+   ```
 
-### Start the Service
+The client will run on `http://localhost:3000` and the service on `http://localhost:3001`.
 
-From the service directory:
-
-```bash
-cd service
-npm run dev
-```
-
-The service will run on `http://localhost:3001`.
-
-### Start the Client
-
-From the client directory:
-
-```bash
-cd client
-npm run dev
-```
-
-The client will run on `http://localhost:3000`.
-
-### Run Tests for Client
-
-- `npm run test`
+To run tests, use `npm run test` in `/client`.
 
 ## Development Notes
 
