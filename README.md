@@ -16,26 +16,13 @@ A full-stack application for exploring GitHub repositories dynamically.
    cd ../service && npm install
    ```
 
-3. Set up environment variables in `/service` by copying `.env.example`:
-
-   ```bash
-   cp .env.example .env
-   ```
-
-4. Edit `/service/.env` and add your GitHub token (or add mine):
-
-   ```
-   PORT=3001
-   GITHUB_TOKEN=
-   ```
-
-5. Start the service:
+3. Start the service in `/service`:
 
    ```bash
    npm run dev
    ```
 
-6. In a new terminal, start the client in `/client`:
+4. In a new terminal, start the client in `/client`:
    ```bash
    npm run dev
    ```
@@ -48,4 +35,4 @@ To run tests, use `npm run test` in `/client`.
 
 **AI Usage**:
 
-I built this project using Claude AI as a development tool. I used AI to help plan out tasks, implement features when I hit roadblocks, debug errors, and handle styling. I stayed hands-on the whole time, writing code myself, tweaking and modifying AI-generated code to fit what I needed, making architectural decisions, and making sure everything met my standards and followed the project requirements. Most importantly, I reviewed and understood all the AI-generated code before adding it to the project. This is actually how I work. AI is a solid tool for moving faster, but I make sure I fully own and understand what goes into my code.
+I built this project using Claude AI as a development tool. I used AI to plan out tasks, add boilerplate, debug errors, and assist with styling. I stayed hands-on throughout, writing code myself, tweaking and modifying AI-generated suggestions, making architectural decisions, and ensuring all code met my standards and followed the project requirements. As always, I reviewed and curated any AI-generated code before adding it to the project. This reflects how I work. It's understood by me that AI is a solid pair programming tool, but I fully own and understand everything that goes into my code.

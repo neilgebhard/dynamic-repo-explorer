@@ -6,13 +6,12 @@ const router = Router()
 const GITHUB_HEADERS = {
   Accept: 'application/vnd.github.v3+json',
   'User-Agent': 'Dynamic-Repo-Explorer',
-  Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
 }
 
 router.get('/initial', async (req: Request, res: Response) => {
   try {
     const response = await fetch(
-      'https://api.github.com/search/repositories?q=is:public+archived:false&sort=updated&order=desc&per_page=20',
+      'https://api.github.com/search/repositories?q=stars:>1000+sort:updated&per_page=20',
       {
         headers: GITHUB_HEADERS,
       }

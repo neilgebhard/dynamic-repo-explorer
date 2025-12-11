@@ -51,11 +51,13 @@ function App() {
         onChange={(e) => setFilter(e.target.value)}
         type='text'
       />
-      <InitialRepos
-        repos={filteredRepos}
-        onShowOwnerRepos={handleShowOwnerRepos}
-      />
-      {ownerRepos.length > 0 && <OwnerRepos repos={ownerRepos} />}
+      <div className='flex-container'>
+        <InitialRepos
+          repos={filteredRepos}
+          onShowOwnerRepos={handleShowOwnerRepos}
+        />
+        <OwnerRepos repos={ownerRepos} />
+      </div>
       {ownerError && <h2>{ownerError}</h2>}
     </>
   )

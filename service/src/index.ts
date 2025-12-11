@@ -5,12 +5,8 @@ import express, { Application, Request, Response, NextFunction } from 'express'
 import cors from 'cors'
 import routes from './routes'
 
-if (!process.env.GITHUB_TOKEN) {
-  throw new Error('GITHUB_TOKEN environment variable is required')
-}
-
 const app: Application = express()
-const PORT = process.env.PORT || 3001
+const PORT = 3001
 
 app.use(cors())
 app.use(express.json())
@@ -36,5 +32,5 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`)
+  console.log(`Server running on http://localhost:3001`)
 })

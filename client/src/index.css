@@ -11,7 +11,7 @@ body {
 }
 
 #root {
-  max-width: 1000px;
+  width: 1400px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
@@ -42,7 +42,6 @@ input {
   font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
-  margin-bottom: 2rem;
 }
 
 input:focus {
@@ -116,4 +115,16 @@ h2:only-child {
   text-align: center;
   padding: 3rem;
   color: #666;
+}
+
+.flex-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  align-items: flex-start;
+}
+
+.flex-container > * {
+  flex: 1;
+  min-width: 0;
 }
